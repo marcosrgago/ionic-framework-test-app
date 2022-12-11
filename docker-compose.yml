@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  app:
+    build: .
+    command: 'ionic serve --external'
+    container_name: ionic-framework-test-app
+    ports:
+      - '8100:8100'
+      - '35729:35729'
+    expose:
+      - 8100
+      - 35729
+    volumes:
+      - "./app/:/tmp/myNewProject"
+      - "./cordova/:/tmp/myApp"
