@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   app:
-    build: .
+    image: acodevs/ionic-framework:2022.12.10-vue
     command: 'ionic serve --external'
     container_name: ionic-framework-test-app
     ports:
@@ -10,6 +10,7 @@ services:
     expose:
       - 8100
       - 35729
+    working_dir: /tmp/myNewProject
     volumes:
       - "./app/:/tmp/myNewProject"
       - "./cordova/:/tmp/myApp"
